@@ -87,7 +87,7 @@ def register_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
         password=hashed_pwd,
         role=user.role,
         department=user.department,
-        is_approved=False
+        is_approved=True
     )
 
     db.add(new_user)
