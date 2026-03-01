@@ -197,19 +197,9 @@ http://localhost:5173
 🔑 Default Test Accounts
 🔐 Admin
 
-Email: admin@gmail.com
-Password: admin123
+Email: admin@medflow.com  
+Password: Admin@123  
 
-🏥 Staff 
-
-Reception → reception1@gmail.com
-Password: reception_staff
-
-Lab → lab1@gmail.com
-Password: lab_staff
-
-Billing → billing1@gmail.com
-Password: billing_staff
 
 🧪 API Endpoints Overview
 
