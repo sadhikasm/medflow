@@ -81,14 +81,16 @@ def register_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
 
     hashed_pwd = hash_password(user.password)
 
+    approved_status = True if user.role == "Patient" else False
+
     new_user = models.User(
-        name=user.name,
-        email=user.email,
-        password=hashed_pwd,
-        role=user.role,
-        department=user.department,
-        is_approved=True
-    )
+    name=user.name,
+    email=user.email,
+    password=hashed_pwd,
+    role=user.role,
+    department=user.department,
+    is_approved=approved_status
+)
 
     db.add(new_user)
     db.commit()

@@ -36,8 +36,15 @@ const Register = () => {
                 department: role === 'Staff' ? department : null
             });
 
-            alert('Registration successful! Your account is pending admin approval.');
+            // ✅ Updated logic
+            if (role === 'Patient') {
+                alert('Registration successful! You can now login.');
+            } else {
+                alert('Registration successful! Your account is pending admin approval.');
+            }
+
             navigate('/login');
+
         } catch (err) {
             if (err.response && err.response.data && err.response.data.detail) {
                 setError(err.response.data.detail);
@@ -137,12 +144,23 @@ const Register = () => {
                         </div>
                     )}
 
-                    <button type="submit" className="btn" disabled={loading} style={{ marginBottom: '1rem', width: '100%' }}>
+                    <button 
+                        type="submit" 
+                        className="btn" 
+                        disabled={loading} 
+                        style={{ marginBottom: '1rem', width: '100%' }}
+                    >
                         {loading ? 'Registering...' : 'Register'}
                     </button>
 
                     <div style={{ textAlign: 'center', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                        Already have an account? <Link to="/login" style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: '500' }}>Sign in here</Link>
+                        Already have an account? 
+                        <Link 
+                            to="/login" 
+                            style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: '500' }}
+                        >
+                            {' '}Sign in here
+                        </Link>
                     </div>
                 </form>
             </div>
