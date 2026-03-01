@@ -1,5 +1,5 @@
 🚀 Live Demo
-Frontend: https://magical-croissant-40cee7.netlify.app 
+https://magical-croissant-40cee7.netlify.app 
 ---
 
 ## 🔐 Demo Access Credentials
