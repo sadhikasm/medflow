@@ -33,6 +33,27 @@ app.add_middleware(
 
 
 Base.metadata.create_all(bind=engine)
+# 🔥 AUTO CREATE DEFAULT ADMIN IF NOT EXISTS
+def create_default_admin():
+    db = SessionLocal()
+    admin = db.query(models.User).filter(models.User.role == "Admin").first()
+
+    if not admin:
+        default_admin = models.User(
+            name="System Admin",
+            email="admin@medflow.com",
+            password=hash_password("Admin@123"),
+            role="Admin",
+            department=None,
+            is_approved=True
+        )
+        db.add(default_admin)
+        db.commit()
+
+    db.close()
+
+create_default_admin()
+
 
 security = HTTPBearer()
 
