@@ -1,6 +1,31 @@
 🚀 Live Demo
-Frontend: https://magical-croissant-40cee7.netlify.app  
+Frontend: https://magical-croissant-40cee7.netlify.app 
+---
 
+## 🔐 Demo Access Credentials
+
+For demonstration purposes:
+
+### 👑 Admin Account
+Email: admin@medflow.com  
+Password: Admin@123  
+
+Use this account to:
+- Approve new staff registrations
+- View all hospital requests
+- Access the master dashboard
+
+---
+
+### 👥 Other Users
+You can register new accounts directly from the live website:
+
+- Patients → Auto-approved
+- Staff → Requires admin approval
+
+After registering as Staff, log in using the Admin account to approve the user.
+
+---
 🏥 MedFlow – Hospital Inter-Department Workflow Automation System
 
 MedFlow is a full-stack web application designed to automate and secure patient request routing across hospital departments using a structured workflow and strict role-based access control (RBAC).
